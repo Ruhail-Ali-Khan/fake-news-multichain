@@ -109,19 +109,6 @@ python -m unittest discover -s tests -v
 The external evaluation requires `data/external/liar/test.tsv`. `compare_triage.py` retrospectively matches review budgets on test scores; `calibrated_triage.py` freezes its threshold using training-partition calibration. Neither simulated review case has been reviewed by a human.
 
 
-## Code map
-
-| Script | Role |
-|---|---|
-| `multichain_client.py` | Local JSON-RPC communication |
-| `publish_news.py`, `verify_news.py` | Basic publish/hash experiment |
-| `prepare_dataset.py` | ISOT cleaning and deduplication |
-| `train_model.py`, `predict_news.py` | NLP training and inference |
-| `news_pipeline.py` | NLP prediction, publication and verification |
-| `train_rl.py` | Tabular Q-learning policy and evaluation |
-| `rl_news_pipeline.py` | NLP + RL + MultiChain demonstration |
-| `compare_triage.py`, `calibrated_triage.py` | Baseline comparisons |
-| `evaluate_liar_external.py` | Out-of-domain evaluation |
 
 ## Security, reproducibility and research limitations
 
