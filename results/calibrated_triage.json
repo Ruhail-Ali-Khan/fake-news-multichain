@@ -1,0 +1,60 @@
+{
+  "method": "Training-only calibrated fixed-10%-target review policy",
+  "target_review_rate": 0.1,
+  "actual_calibration_referral_rate": 0.09996331621423331,
+  "frozen_confidence_margin": 0.30318759025283504,
+  "calibration_sample_count": 5452,
+  "test_sample_count": 11683,
+  "cautions": [
+    "The threshold was selected using training-partition calibration scores, not test scores or test labels.",
+    "The review rates for RL and the calibrated policy need not match on test data.",
+    "Referral for review is simulated; no human reviewed these articles.",
+    "Scores are not calibrated real-world truth probabilities.",
+    "Q-learning is one-step tabular RL, not the paper's deep RL."
+  ],
+  "baseline_nlp": {
+    "articles": 11683,
+    "human_review_count": 0,
+    "human_review_rate": 0.0,
+    "automated_count": 11683,
+    "correct_automatic_decisions": 11508,
+    "incorrect_automatic_decisions": 175,
+    "accuracy_on_automatic_decisions": 0.9850209706411025,
+    "mean_reward": 0.8651887357699221,
+    "action_counts": {
+      "FAKE": 5243,
+      "REAL": 6440,
+      "REVIEW": 0
+    }
+  },
+  "qlearning_triage": {
+    "articles": 11683,
+    "human_review_count": 1055,
+    "human_review_rate": 0.09030214842078234,
+    "automated_count": 10628,
+    "correct_automatic_decisions": 10607,
+    "incorrect_automatic_decisions": 21,
+    "accuracy_on_automatic_decisions": 0.9980240873165224,
+    "mean_reward": 0.8709449627664128,
+    "action_counts": {
+      "FAKE": 4958,
+      "REAL": 5670,
+      "REVIEW": 1055
+    }
+  },
+  "calibrated_confidence_triage": {
+    "articles": 11683,
+    "human_review_count": 1071,
+    "human_review_rate": 0.09167165967645297,
+    "automated_count": 10612,
+    "correct_automatic_decisions": 10596,
+    "incorrect_automatic_decisions": 16,
+    "accuracy_on_automatic_decisions": 0.9984922728986053,
+    "mean_reward": 0.873084824103398,
+    "action_counts": {
+      "FAKE": 4679,
+      "REAL": 5933,
+      "REVIEW": 1071
+    }
+  }
+}

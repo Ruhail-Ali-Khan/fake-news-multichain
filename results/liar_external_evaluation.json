@@ -1,0 +1,63 @@
+{
+  "experiment": "ISOT-trained NLP model tested without retraining on LIAR test.tsv",
+  "domain": "short political claims; different task from full-length news articles",
+  "label_mapping": {
+    "false": 0,
+    "pants-fire": 0,
+    "true": 1
+  },
+  "excluded_labels": [
+    "barely-true",
+    "half-true",
+    "mostly-true"
+  ],
+  "source_rows": 1283,
+  "evaluated_rows": 553,
+  "excluded_or_invalid_rows": 730,
+  "original_label_counts_in_evaluation": {
+    "false": 250,
+    "true": 211,
+    "pants-fire": 92
+  },
+  "accuracy": 0.5280289330922242,
+  "balanced_accuracy": 0.5067764197222915,
+  "macro_f1": 0.5063057331376795,
+  "majority_class_accuracy": 0.6184448462929476,
+  "classification_report": {
+    "FAKE": {
+      "precision": 0.6238532110091743,
+      "recall": 0.5964912280701754,
+      "f1-score": 0.6098654708520179,
+      "support": 342.0
+    },
+    "REAL": {
+      "precision": 0.3893805309734513,
+      "recall": 0.41706161137440756,
+      "f1-score": 0.40274599542334094,
+      "support": 211.0
+    },
+    "accuracy": 0.5280289330922242,
+    "macro avg": {
+      "precision": 0.5066168709913128,
+      "recall": 0.5067764197222915,
+      "f1-score": 0.5063057331376795,
+      "support": 553.0
+    },
+    "weighted avg": {
+      "precision": 0.5343889515380396,
+      "recall": 0.5280289330922242,
+      "f1-score": 0.5308379675691051,
+      "support": 553.0
+    }
+  },
+  "confusion_matrix_rows_actual_fake_real": [
+    [
+      204,
+      138
+    ],
+    [
+      123,
+      88
+    ]
+  ]
+}

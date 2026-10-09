@@ -1,0 +1,55 @@
+{
+  "method": "one-step tabular Q-learning contextual-bandit baseline",
+  "note": "Not the paper's deep reinforcement learning architecture.",
+  "reward_correct": 1.0,
+  "penalty_wrong": -8.0,
+  "cost_human_review": -0.25,
+  "training_samples_for_rl": 21806,
+  "validation_samples_for_rl": 5452,
+  "held_out_test_samples": 11683,
+  "validation": {
+    "articles": 5452,
+    "human_review_count": 653,
+    "human_review_rate": 0.11977256052824652,
+    "automated_count": 4799,
+    "correct_automatic_decisions": 4789,
+    "incorrect_automatic_decisions": 10,
+    "accuracy_on_automatic_decisions": 0.9979162325484476,
+    "mean_reward": 0.8337765957446809,
+    "action_counts": {
+      "FAKE": 2251,
+      "REAL": 2548,
+      "REVIEW": 653
+    }
+  },
+  "baseline_held_out_test": {
+    "articles": 11683,
+    "human_review_count": 0,
+    "human_review_rate": 0.0,
+    "automated_count": 11683,
+    "correct_automatic_decisions": 11508,
+    "incorrect_automatic_decisions": 175,
+    "accuracy_on_automatic_decisions": 0.9850209706411025,
+    "mean_reward": 0.8651887357699221,
+    "action_counts": {
+      "FAKE": 5243,
+      "REAL": 6440,
+      "REVIEW": 0
+    }
+  },
+  "rl_held_out_test": {
+    "articles": 11683,
+    "human_review_count": 1055,
+    "human_review_rate": 0.09030214842078234,
+    "automated_count": 10628,
+    "correct_automatic_decisions": 10607,
+    "incorrect_automatic_decisions": 21,
+    "accuracy_on_automatic_decisions": 0.9980240873165224,
+    "mean_reward": 0.8709449627664128,
+    "action_counts": {
+      "FAKE": 4958,
+      "REAL": 5670,
+      "REVIEW": 1055
+    }
+  }
+}

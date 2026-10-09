@@ -1,0 +1,55 @@
+{
+  "evaluation_type": "retrospective test-set review-budget matching",
+  "notes": [
+    "The threshold policy uses the same number of review referrals as RL.",
+    "Review selection uses model confidence scores, not test labels.",
+    "Neither REVIEW action represents a completed human fact-check.",
+    "Only auto-decision accuracy is reported, conditional on not being reviewed."
+  ],
+  "review_budget": 1055,
+  "baseline_nlp": {
+    "articles": 11683,
+    "human_review_count": 0,
+    "human_review_rate": 0.0,
+    "automated_count": 11683,
+    "correct_automatic_decisions": 11508,
+    "incorrect_automatic_decisions": 175,
+    "accuracy_on_automatic_decisions": 0.9850209706411025,
+    "mean_reward": 0.8651887357699221,
+    "action_counts": {
+      "FAKE": 5243,
+      "REAL": 6440,
+      "REVIEW": 0
+    }
+  },
+  "rl_policy": {
+    "articles": 11683,
+    "human_review_count": 1055,
+    "human_review_rate": 0.09030214842078234,
+    "automated_count": 10628,
+    "correct_automatic_decisions": 10607,
+    "incorrect_automatic_decisions": 21,
+    "accuracy_on_automatic_decisions": 0.9980240873165224,
+    "mean_reward": 0.8709449627664128,
+    "action_counts": {
+      "FAKE": 4958,
+      "REAL": 5670,
+      "REVIEW": 1055
+    }
+  },
+  "confidence_review_policy": {
+    "articles": 11683,
+    "human_review_count": 1055,
+    "human_review_rate": 0.09030214842078234,
+    "automated_count": 10628,
+    "correct_automatic_decisions": 10612,
+    "incorrect_automatic_decisions": 16,
+    "accuracy_on_automatic_decisions": 0.9984945427173504,
+    "mean_reward": 0.8747967131729864,
+    "action_counts": {
+      "FAKE": 4691,
+      "REAL": 5937,
+      "REVIEW": 1055
+    }
+  }
+}
