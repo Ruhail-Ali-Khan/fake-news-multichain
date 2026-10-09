@@ -1,7 +1,5 @@
 # Fake News Detection: NLP + Q-learning + MultiChain
 
-Research implementation **inspired by** Z. Shahbazi and Y.-C. Byun, “Fake Media Detection Based on Natural Language Processing and Blockchain Approaches,” *IEEE Access*, 2021, DOI: [10.1109/ACCESS.2021.3112607](https://doi.org/10.1109/ACCESS.2021.3112607).
-
 **Scope statement:** This is a Windows proof of concept, **not** an exact reproduction of the original research paper. The paper discusses Hyperledger Fabric/Composer and deep reinforcement learning; this project instead uses MultiChain 2.3.3 JSON-RPC and a one-step tabular Q-learning review policy. No multi-organization validator approval workflow, deployed smart contract, or independent fact verification is implemented. “FAKE” and “REAL” are model-generated labels, not established truth.
 
 ## Features
@@ -110,21 +108,6 @@ python -m unittest discover -s tests -v
 
 The external evaluation requires `data/external/liar/test.tsv`. `compare_triage.py` retrospectively matches review budgets on test scores; `calibrated_triage.py` freezes its threshold using training-partition calibration. Neither simulated review case has been reviewed by a human.
 
-## Recorded experimental snapshot
-
-The included `results/*.json` reports:
-
-| Measure | Result |
-|---|---:|
-| ISOT processed records | 38,941 |
-| ISOT split | 27,258 train / 11,683 test |
-| ISOT NLP test accuracy | 98.5021% |
-| ISOT NLP ROC-AUC | 0.998855 |
-| Q-learning triage | 1,055 reviews; 21 incorrect automated decisions |
-| Training-calibrated confidence triage | 1,071 reviews; 16 incorrect automated decisions |
-| LIAR exact-label out-of-domain test | 553 statements; 52.8029% accuracy |
-
-The confidence threshold outperformed Q-learning for triage on this dataset. The LIAR result is worse than the majority-class baseline and should **not** be hidden. LIAR is a different task (short political statements rather than ISOT news articles), so the two scores are not directly comparable.
 
 ## Code map
 
