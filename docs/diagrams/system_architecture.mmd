@@ -1,0 +1,19 @@
+flowchart TD
+    P[Publisher enters headline and article] --> L[Local JSON article file]
+    P --> C[Text cleaning and normalization]
+    C --> N[TF-IDF + Logistic Regression baseline]
+    N --> Q[Fake-class score]
+    Q --> RL[One-step tabular Q-learning policy]
+    RL --> D{FAKE / REAL / REVIEW recommendation}
+    P --> H[SHA-256 hashes: content and full article]
+    N --> B[Audit metadata: prediction, score, model ID]
+    D --> B
+    H --> B
+    B --> RPC[Python JSON-RPC]
+    RPC --> MC[MultiChain stream: news_records]
+    MC --> T[Transaction ID and confirmations]
+    MC --> V[Retrieve on-chain hashes]
+    L --> V
+    V --> I{Hashes match?}
+    I -->|Yes| OK[Integrity verified; truth NOT established]
+    I -->|No| BAD[Changed local content detected]

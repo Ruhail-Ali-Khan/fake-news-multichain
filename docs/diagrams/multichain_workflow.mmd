@@ -1,0 +1,18 @@
+flowchart TD
+    A[Install MultiChain 2.3.3 on Windows] --> B[Create fakenews chain]
+    B --> C[Start node and check getinfo]
+    C --> D[Inspect existing streams]
+    D --> E{news_records exists?}
+    E -->|No| F[Create write-restricted news_records stream]
+    E -->|Yes| G[Reuse existing stream]
+    F --> H[Subscribe to stream]
+    G --> H
+    H --> J[Python reads local JSON-RPC config]
+    J --> K[Python submits JSON metadata with article ID key]
+    K --> L[MultiChain publishes transaction]
+    L --> M[Wait for block confirmation]
+    M --> N[Retrieve item by stream key]
+    N --> O[Compare SHA-256 of local article with stored hash]
+    O --> P{Match and confirmed?}
+    P -->|Yes| Q[Report integrity verified]
+    P -->|No| R[Report tamper or pending state]
